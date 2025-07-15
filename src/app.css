@@ -1,0 +1,29 @@
+body,
+* {
+  font-family: Pixelated MS Sans Serif, Tahoma, sans-serif;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-font-smoothing: inherit;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("./assets/cloud-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}

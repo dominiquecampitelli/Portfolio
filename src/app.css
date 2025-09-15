@@ -6,7 +6,8 @@ body,
   padding: 0;
   overflow: hidden;
   box-sizing: border-box;
-  -webkit-font-smoothing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app-container {

@@ -53,12 +53,24 @@
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
   margin-top: 24px;
 }
 
 .section-title {
-  font-size: 16px;
+  font-family: "Chewy", system-ui;
+  font-size: 22px;
+  font-weight: 400;
   color: #f7f1e3;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: "Chewy", system-ui;
+  font-size: 18px;
+  font-weight: 400;
+  color: #aaa69d;
   margin-bottom: 10px;
 }
 
@@ -72,14 +84,70 @@
   }
 }
 
-.skill {
-  font-size: 12px;
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-title {
+  color: #f7f1e3;
+  background-color: #4b6584;
+  font-family: "Chewy", system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px 10px;
+}
+
+.skills-list {
+  padding: 1em;
+  list-style-type: none;
+  border: 3px solid #ffffff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.skills-item-title {
   margin-bottom: 10px;
+  color: #f7f1e3;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.skills-item {
+  position: relative;
+  margin-top: 6px;
+  padding-left: 1.2em;
+  color: #f7f1e3;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  &::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    font-size: 10px;
+    color: #f7f1e3;
+  }
 }
 
 .bar {
   height: 8px;
-  background-color: #cc8e35;
+  background-color: #4834d4;
   border-radius: 4px;
   margin-top: 4px;
 }
@@ -93,18 +161,38 @@
 }
 
 .achievements {
+  width: fit-content;
+  border-radius: 10px;
+  background: #2c3a47;
+  box-shadow: 5px 5px 0px #12171c, -5px -5px 0px #465d72;
   display: flex;
   flex-direction: column;
-  padding: 4px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding: 10px;
 }
 
 .achievements-title {
+  color: #f7f1e3;
+  font-family: "Chewy", system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 6px;
 }
 
 .achievements-text {
+  color: #f7f1e3;
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 2px;
 }
 
 .achievements-date {
+  color: #f7f1e3;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .tags {

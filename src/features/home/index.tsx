@@ -6,77 +6,269 @@ import {
   SiGithubcopilot,
   SiGooglegemini,
 } from "react-icons/si";
+import { DiScrum } from "react-icons/di";
+import { PiKanbanFill } from "react-icons/pi";
 
 import "./styles.css";
 
 import myAvatar from "../../assets/avatar_dominique.png";
+import tanstack from "../../assets/tanstack.png";
+import nativewind from "../../assets/nativewind.jpg";
+import development from "../../assets/under_development.png";
 
 type Category = "frontend" | "mobile" | "backend" | "devops" | "ai" | "outros";
 
-const iconSets: Record<Category, (string | React.ReactNode)[]> = {
+export interface IconItem {
+  icon: string | React.ReactNode;
+  label: string;
+}
+
+const iconSets: Record<Category, IconItem[]> = {
   frontend: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apollographql/apollographql-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/styledcomponents/styledcomponents-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactbootstrap/reactbootstrap-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original-wordmark.svg",
-    <SiReactquery size={40} style={{ fill: "#00B8D9" }} key="reactquery" />,
-    <SiPrimereact size={40} style={{ fill: "#5B1FA1" }} key="primereact" />,
-    <SiTestinglibrary size={40} style={{ fill: "#E53E3E" }} key="rtl" />,
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      label: "ReactJS",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+      label: "Next.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+      label: "Angular",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      label: "JavaScript",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      label: "TypeScript",
+    },
+    {
+      icon: (
+        <SiReactquery size={40} style={{ fill: "#00B8D9" }} key="reactquery" />
+      ),
+      label: "React Query",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+      label: "Redux",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg",
+      label: "Zustand",
+    },
+    {
+      icon: tanstack,
+      label: "Nativewind",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg",
+      label: "GraphQL",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apollographql/apollographql-original.svg",
+      label: "Apollo GraphQL",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      label: "HTML5",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      label: "CSS3",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/styledcomponents/styledcomponents-original.svg",
+      label: "styled-components",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      label: "Tailwind CSS",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+      label: "SASS",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+      label: "Bootstrap",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactbootstrap/reactbootstrap-original.svg",
+      label: "React Bootstrap",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
+      label: "Material UI",
+    },
+    {
+      icon: (
+        <SiPrimereact size={40} style={{ fill: "#5B1FA1" }} key="primereact" />
+      ),
+      label: "PrimeReact",
+    },
+    {
+      icon: (
+        <SiTestinglibrary size={40} style={{ fill: "#E53E3E" }} key="rtl" />
+      ),
+      label: "React Testing Library",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg",
+      label: "Storybook",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
+      label: "Three.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
+      label: "JQuery",
+    },
   ],
   mobile: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg",
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      label: "React Native",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg",
+      label: "Expo",
+    },
+    {
+      icon: nativewind,
+      label: "Nativewind",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
+      label: "Android Studio",
+    },
   ],
   backend: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      label: "Node.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      label: "Express.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg",
+      label: "Nodemon",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+      label: "PHP",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+      label: "WordPress",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+      label: "Java",
+    },
   ],
   devops: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-plain-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg",
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg",
+      label: "Azure DevOps",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+      label: "AWS",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      label: "Git",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      label: "Docker",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-plain.svg",
+      label: "Heroku",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+      label: "Vercel",
+    },
   ],
   ai: [
-    <SiGithubcopilot size={40} style={{ fill: "#3DDCFF" }} key="copilot" />,
-    <SiGooglegemini size={40} style={{ fill: "#4285F4" }} key="gemini" />,
+    {
+      icon: (
+        <SiGithubcopilot size={40} style={{ fill: "#3DDCFF" }} key="copilot" />
+      ),
+      label: "Github Copilot",
+    },
+    {
+      icon: (
+        <SiGooglegemini size={40} style={{ fill: "#4285F4" }} key="gemini" />
+      ),
+      label: "Google Gemini",
+    },
   ],
   outros: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original-wordmark.svg",
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      label: "MongoDB",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      label: "MySQL",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+      label: "PostgreSQL",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
+      label: "Prisma",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg",
+      label: "Cypress.io",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg",
+      label: "Jest",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg",
+      label: "Jenkins",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
+      label: "Vitest",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg",
+      label: "Socket.io",
+    },
+    {
+      icon: <DiScrum size={40} style={{ fill: "#1598b5" }} key="Scrum" />,
+      label: "Scrum",
+    },
+    {
+      icon: <PiKanbanFill size={40} style={{ fill: "#1b3140" }} key="Kanban" />,
+      label: "Kanban",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg",
+      label: "AdobeXD",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+      label: "Figma",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
+      label: "Framer",
+    },
   ],
 };
 
@@ -84,24 +276,28 @@ export function Home() {
   const [icons, setIcons] = useState<React.ReactNode[]>([]);
 
   const showIcons = (type: Category) => {
-    const mapped = iconSets[type].map((icon, index) =>
-      typeof icon === "string" ? (
-        <img
-          key={index}
-          src={icon}
-          alt="icon"
-          style={{
-            width: "40px",
-            height: "40px",
-            transition: "transform 0.3s",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.2)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-        />
-      ) : (
-        icon
-      )
-    );
+    const mapped = iconSets[type].map(({ icon, label }, index) => (
+      <div key={index} className="skill-card" data-tooltip={label}>
+        {typeof icon === "string" ? (
+          <img
+            src={icon}
+            alt={label}
+            style={{
+              width: "50px",
+              height: "50px",
+              transition: "transform 0.3s",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.2)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          />
+        ) : (
+          icon
+        )}
+      </div>
+    ));
+
     setIcons(mapped);
   };
 
@@ -113,7 +309,7 @@ export function Home() {
             <img src={myAvatar} alt="Avatar" className="avatar" />
             <div className="info-block">
               <h1 className="name">Dominique Campitelli</h1>
-              <p className="subtitle">Classe: Desenvolvedor Full-Stack</p>
+              <p className="subtitle">Classe: Desenvolvedor Front-End | Full-Stack</p>
               <p className="status">Status: Sempre aprimorando.</p>
             </div>
           </div>
@@ -126,8 +322,8 @@ export function Home() {
               <strong>Raça:</strong> Humano
             </p>
             <p>
-              <strong>Classe:</strong> Desenvolvedor Full-Stack (especialista em
-              Front-end)
+              <strong>Classe:</strong> Desenvolvedor Full-Stack especialista em
+              Front-end
             </p>
             <p>
               <strong>Principais habilidades:</strong> ReactJS, JavaScript,
@@ -146,8 +342,9 @@ export function Home() {
           </div>
         </section>
 
-        <div style={{ textAlign: "center", padding: "20px" }}>
-          <div style={{ marginBottom: "20px" }}>
+        <section className="section">
+          <h2 className="section-title">Habilidades</h2>
+          <div className="tabs">
             <button onClick={() => showIcons("frontend")}>Front-End</button>
             <button onClick={() => showIcons("mobile")}>Mobile</button>
             <button onClick={() => showIcons("backend")}>Back-End</button>
@@ -155,57 +352,15 @@ export function Home() {
             <button onClick={() => showIcons("ai")}>IA</button>
             <button onClick={() => showIcons("outros")}>Outros</button>
           </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, 50px)",
-              gap: "10px",
-              justifyContent: "center",
-              marginTop: "20px",
-            }}
-          >
-            {icons.map((icon, index) => (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                  borderRadius: "50%",
-                  padding: "5px",
-                }}
-              >
-                {icon}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/*   <section className="section">
-          <h2 className="section-title">Habilidades</h2>
-          <div className="skills">
-            <div className="skills-group">
-              <h3 className="skills-title">Front-End</h3>
-              <ul className="skills-list">
-                <li className="skills-item">TanStack</li>//FALTANDO
-                <li className="skills-item">zustand</li>//FALTANDO
-              </ul>
-            </div>
-            <div className="skills-group">
-              <h3 className="skills-title">Metodologia Ágil</h3>
-              <ul className="skills-list">
-                <li className="skills-item">Scrum</li>//FALTANDO
-                <li className="skills-item">Kanban</li>//FALTANDO
-              </ul>
-            </div>
-          </div>
-        </section> */}
+          <div className="skills-grid">{icons}</div>
+        </section>
 
         <section className="section">
           <h2 className="section-title">Missões Concluídas</h2>
           <div className="skills">
             <div className="skills-group">
               <h3 className="skills-title">
-                2025 | NAVA - Technology for business
+                NAVA - Technology for business
               </h3>
               <ul className="skills-list">
                 <li className="skills-item-title">Desenvolvedor Front-End</li>
@@ -217,7 +372,7 @@ export function Home() {
               </ul>
             </div>
             <div className="skills-group">
-              <h3 className="skills-title">2021 - 2024 | Claro Brasil</h3>
+              <h3 className="skills-title">Claro Brasil</h3>
               <ul className="skills-list">
                 <li className="skills-item-title">Desenvolvedor Front-End</li>
                 <li className="skills-item">
@@ -228,7 +383,7 @@ export function Home() {
               </ul>
             </div>
             <div className="skills-group">
-              <h3 className="skills-title">2018 - 2021 | Superare</h3>
+              <h3 className="skills-title">Superare</h3>
               <ul className="skills-list">
                 <li className="skills-item-title">Desenvolvedor Front-End</li>
                 <li className="skills-item">
@@ -252,16 +407,17 @@ export function Home() {
           </div>
         </section>
 
-        {/* <section className="section">
+        <section className="section">
           <h2 className="section-title">Títulos Desbloqueados</h2>
-          <div className="tags">
-            {tags.map((tag, i) => (
-              <span key={i} className="tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </section> */}
+           <img
+            src={development}
+            alt='Em desenvolvimento'
+            style={{
+              width: "100px",
+              height: "150px",
+            }}
+          />
+        </section>
       </div>
     </div>
   );

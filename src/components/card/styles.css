@@ -13,8 +13,8 @@
 .card {
   width: 100%;
   height: 180px;
-  border-radius: 20px !important;
-  border: none !important;
+  padding: 12px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

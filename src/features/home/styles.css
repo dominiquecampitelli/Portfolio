@@ -145,21 +145,6 @@
   }
 }
 
-.bar {
-  height: 8px;
-  background-color: #4834d4;
-  border-radius: 4px;
-  margin-top: 4px;
-}
-
-.card {
-  background-color: #1a1a1a;
-  margin-bottom: 10px;
-  padding: 12px;
-  border-radius: 4px;
-  border: 4px double #4834d4;
-}
-
 .achievements {
   width: fit-content;
   border-radius: 10px;
@@ -193,20 +178,4 @@
   font-family: "Fredoka", sans-serif;
   font-size: 12px;
   font-weight: 400;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.tag {
-  background-color: #9b59b6;
-  color: #f7f1e3;
-  padding: 6px 12px;
-  border-radius: 2px;
-  font-size: 0.7em;
-  border: 1px solid #ff3b3b;
 }

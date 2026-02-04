@@ -4,6 +4,8 @@ import Card from "../../components/card";
 import "./styles.css";
 
 import myAvatar from "../../assets/avatar_dominique.png";
+import likedinIcon from "../../assets/linkedin.png";
+import githubIcon from "../../assets/github.png";
 
 export function Home() {
   return (
@@ -12,12 +14,28 @@ export function Home() {
         <div className="header">
           <div className="header-content">
             <img src={myAvatar} alt="Avatar" className="avatar" />
-            <div className="info-block">
+            <div className="info">
               <h1 className="name">Dominique Campitelli</h1>
               <p className="subtitle">
                 Classe: Desenvolvedor Front-End | Full-Stack
               </p>
               <p className="status">Status: Sempre aprimorando.</p>
+              <div className="social-links">
+                <a
+                  href="https://linkedin.com/in/dominiquecampitelli"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img src={githubIcon} alt="Github" />
+                </a>
+                <a
+                  href="https://github.com/dominiquecampitelli"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img src={likedinIcon} alt="LinkedIn" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -228,9 +246,21 @@ export function Home() {
                 </p>
               </div>
               <div className="inventory-item-footer">
-                <a href="https://github.com/dominiquecampitelli/messengr" target="_blank">Repo front-end</a>
-                <a href="https://github.com/dominiquecampitelli/messengr-server" target="_blank">Repo back-end</a>
-                <a href="https://messengr-chat.vercel.app/" target="_blank">Visualizar</a>
+                <a
+                  href="https://github.com/dominiquecampitelli/messengr"
+                  target="_blank"
+                >
+                  Repo front-end
+                </a>
+                <a
+                  href="https://github.com/dominiquecampitelli/messengr-server"
+                  target="_blank"
+                >
+                  Repo back-end
+                </a>
+                <a href="https://messengr-chat.vercel.app/" target="_blank">
+                  Visualizar
+                </a>
               </div>
             </div>
           </div>

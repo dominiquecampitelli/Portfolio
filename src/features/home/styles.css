@@ -31,7 +31,7 @@
   border: 2px solid #34ace0;
 }
 
-.info-block {
+.info {
   display: flex;
   flex-direction: column;
 }
@@ -53,6 +53,30 @@
   font-style: italic;
   color: #cc8e35;
   font-size: 12px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+
+  > a {
+    text-decoration: none;
+
+    > img {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+   > a > img {
+      width: 26px;
+      height: 26px;
+   }
+  }
 }
 
 .section {

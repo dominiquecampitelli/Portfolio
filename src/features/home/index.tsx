@@ -208,9 +208,32 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section" style={{ gap: "12px" }}>
+        <section className="section">
           <h2 className="section-title">Títulos Desbloqueados</h2>
           <Card />
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">Inventário</h2>
+          <div className="inventory">
+            <div className="inventory-item">
+              <div className="inventory-item-description">
+                <h1>Messengr</h1>
+                <p>
+                  Projeto de chat em tempo real criado para explorar comunicação
+                  via WebSockets e arquitetura full stack moderna. Utiliza
+                  Next.js no front-end e NestJS no back-end, com salas privadas
+                  por URL, limite de usuários, status online/offline, indicador
+                  de digitação e design responsivo mobile-first.
+                </p>
+              </div>
+              <div className="inventory-item-footer">
+                <a href="https://github.com/dominiquecampitelli/messengr" target="_blank">Repo front-end</a>
+                <a href="https://github.com/dominiquecampitelli/messengr-server" target="_blank">Repo back-end</a>
+                <a href="https://messengr-chat.vercel.app/" target="_blank">Visualizar</a>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </div>

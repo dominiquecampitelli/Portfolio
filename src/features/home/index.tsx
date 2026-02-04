@@ -22,14 +22,14 @@ export function Home() {
               <p className="status">Status: Sempre aprimorando.</p>
               <div className="social-links">
                 <a
-                  href="https://linkedin.com/in/dominiquecampitelli"
+                  href="https://github.com/dominiquecampitelli"
                   target="_blank"
                   rel="noopener"
                 >
                   <img src={githubIcon} alt="Github" />
                 </a>
                 <a
-                  href="https://github.com/dominiquecampitelli"
+                  href="https://linkedin.com/in/dominiquecampitelli"
                   target="_blank"
                   rel="noopener"
                 >
